@@ -1,0 +1,72 @@
+# .gitattributes for repro, to:
+# 1) Ensure that EOLs for text files are stored normalised in Git, to prevent things like mixed line endings after merges
+# 2) Ensure that EOLs are correct for file types where it matters, e.g. .sh and .bat files
+# See http://git-scm.com/docs/gitattributes and https://help.github.com/articles/dealing-with-line-endings
+
+# Default to non-text (i.e. do not normalise EOLs)
+* -text
+
+# Define 'normalised' macro attribute which we mark most text files with. We
+# specify eol so that eols are the same on all developers' machines, so that
+# releases are the same no matter which OS they were built on. We specify
+# eol=crlf (as opposed to eol=lf) so that newlines are displayed correctly
+# when files are opened in Notepad on Windows (e.g. editing components.xconf
+# on a client's server).
+[attr]normalised text eol=crlf
+
+# 'dos' macro attribute for files that must always have DOS EOLs in checkouts
+[attr]dos text eol=crlf
+
+# 'unix' macro attribute for files that must always have UNIX EOLs in checkouts
+[attr]unix text eol=lf
+
+.bzrignore normalised
+.cvsignore normalised
+.gitattributes normalised
+.gitignore normalised
+*.TXT normalised
+*.cc normalised
+*.cpp normalised
+*.css normalised
+*.gradle normalised
+*.ftl normalised
+*.htm normalised
+*.html normalised
+*.java normalised
+*.js normalised
+*.jsx normalised
+*.json normalised
+*.jsp normalised
+*.md normalised
+*.php normalised
+*.properties normalised
+*.scss normalised
+*.sql normalised
+*.tld normalised
+*.txt normalised
+*.wsdd normalised
+*.wsdl normalised
+*.xconf normalised
+*.xml normalised
+*.xpr normalised
+*.xsd normalised
+*.xsl normalised
+*.xslt normalised
+
+*.bat dos
+*.cmd dos
+
+*.asp dos
+*.aspx dos
+*.cs dos
+*.dsp dos
+*.dsw dos
+*.frm dos
+*.reg dos
+*.vbp dos
+*.vbs dos
+*.vbw dos
+
+*.sh unix
+# Python files should have unix end of lines so that Python files with a '#!/usr/bin/env python' shebang can be run with './foo.py'
+*.py unix

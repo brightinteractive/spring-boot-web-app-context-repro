@@ -1,0 +1,29 @@
+; This file is for unifying the coding style for different editors and IDEs.
+; More information at http://EditorConfig.org
+
+root = true
+
+[*.{bat,cmd,css,ftl,gradle,html,java,js,json,jsx,md,properties,py,scss,sh,sql,xml}]
+trim_trailing_whitespace = true
+insert_final_newline = true
+charset = utf-8
+
+[*.{bat,cmd,css,ftl,gradle,html,java,js,json,jsx,md,properties,scss,sql,xml}]
+end_of_line = crlf
+
+[*.sh]
+end_of_line = lf
+
+[*.{bat,cmd,css,ftl,gradle,html,js,jsx,md,properties,py,scss,sh,sql,xml}]
+indent_style = space
+indent_size = 4
+
+[*.java]
+indent_style = tab
+indent_size = 4
+
+# Use 2 space indentation when editing package.json because that's what npm
+# uses when it edits it.
+[package.json]
+indent_style = space
+indent_size = 2

@@ -1,0 +1,16 @@
+*.iml
+/.gradle
+/.idea
+/build
+/bin/
+
+# Spring Boot
+/application.properties
+/application-test.properties
+/config/
+
+# Eclipse
+/.classpath
+/.project
+/.settings/
+/.springBeans
